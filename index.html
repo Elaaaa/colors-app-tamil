@@ -1,0 +1,285 @@
+# colors-app-tamil
+<!-- HIT template: ImageTagging-v3.0 --><!-- Bootstrap v3.0.3 --><!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries -->
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- Instructions -->
+
+<section class="container" id="TaggingOfAnImage">
+<div class="row">
+<div class="col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary"><!-- WARNING: the ids "collapseTrigger" and "instructionBody" are being used to enable expand/collapse feature --><a class="panel-heading" href="javascript:void(0);" id="collapseTrigger"><strong>Instructions (வழிமுறைகள்)  <br /> விரிவாக்க கிளிக் செய்யவும் </strong> <span class="collapse-text"> (click to expand) </span> </a>
+
+<div class="panel-body" id="instructionBody">
+<p>You must answer all 3 questions in this section. </br /> (நீங்கள் இந்த பிரிவில் உள்ள அனைத்து கேள்விகளுக்கும் பதிலளிக்க வேண்டும்.) </p>
+</div>
+</div>
+</div>
+</div>
+<!-- End Instructions --><!-- Image Tagging Layout --></section>
+ <head>
+  <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+}
+</style>
+</head>
+
+
+<script>
+<!--
+function clickColor(hex, seltop, selleft, html5) {
+    var c, cObj, colormap, areas, i, areacolor, cc;
+    if (html5 && html5 == 5)  {
+        c = document.getElementById("html5colorpicker").value;
+    } else {
+        if (hex == 0)  {
+            c = document.getElementById("entercolor").value;
+        } else {
+            c = hex;
+        }
+    }
+    cObj = w3color(c);
+    colorhex = cObj.toHexString();
+    if (cObj.valid) {
+        clearWrongInput();
+    } else {
+        wrongInput();
+        return;
+    }
+    r = cObj.red;
+    g = cObj.green;
+    b = cObj.blue;
+    document.getElementById("colornamDIV").innerHTML = (cObj.toName() || "");
+    document.getElementById("colorhexDIV").innerHTML = cObj.toHexString();
+    document.getElementById("colorrgbDIV").innerHTML = cObj.toRgbString();
+    document.getElementById("colorhslDIV").innerHTML = cObj.toHslString();    
+    if ((!seltop || seltop == -1) && (!selleft || selleft == -1)) {
+        colormap = document.getElementById("colormap");
+        areas = colormap.getElementsByTagName("AREA");
+        for (i = 0; i < areas.length; i++) {
+            areacolor = areas[i].getAttribute("onmouseover").replace('mouseOverColor("', '');
+            areacolor = areacolor.replace('")', '');
+            if (areacolor.toLowerCase() == colorhex) {
+                cc = areas[i].getAttribute("onclick").replace(')', '').split(",");
+                seltop = Number(cc[1]);
+                selleft = Number(cc[2]);
+            }
+        }
+    }
+    if ((seltop+200)>-1 && selleft>-1) {
+        document.getElementById("selectedhexagon").style.top=seltop + "px";
+        document.getElementById("selectedhexagon").style.left=selleft + "px";
+        document.getElementById("selectedhexagon").style.visibility="visible";
+  } else {
+        document.getElementById("divpreview").style.backgroundColor = cObj.toHexString();
+        document.getElementById("selectedhexagon").style.visibility = "hidden";
+  }
+    document.getElementById("selectedcolor").style.backgroundColor = cObj.toHexString();
+    document.getElementById("html5colorpicker").value = cObj.toHexString();  
+  document.getElementById('slideRed').value = r;
+  document.getElementById('slideGreen').value = g;
+  document.getElementById('slideBlue').value = b;
+  changeRed(r);changeGreen(g);changeBlue(b);
+  changeColor();
+  document.getElementById("fixed").style.backgroundColor = cObj.toHexString();
+}
+//-->
+</script>
+
+<div class="row" id="workContent">
+<form>
+<ol>
+  <li>Identify the colors indicated by the below patches: (Your answer should not exceed two words for each response).<br /><font color="blue">
+  (கீழே இணைப்புகளில் உள்ள நிறங்களை கண்டறிந்து அடையாளபடுத்து: உங்கள் பதில் ஒவ்வொரு பதிலுக்கும் இரண்டு வார்த்தைகள் மிகாமல் இருக்க வேண்டும்).</font>
+  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+ 
+  <table>
+    <tbody>
+      <tr>
+        <th>
+        <h5>Color patch <br /> <font color="blue">((வண்ண இணைப்புகள்)</font></h5>
+        </th>
+        <th >
+        <h5>Name the color<br />
+        (example: purple, pale green, light brown etc) <br /><font color="blue">(வண்ணங்களுக்கு பெயரிடு: உதாரணம்
+ஊதா, வெளிர்பச்சை, இளம்பழுப்பு போன்றவை) </font></h5>
+        </th>
+        <th>
+        <h5>Name the color relating to a real world object<br />
+        (example: sky blue, blood red, apple green etc) <br /><font color="blue">(உலகப்பொருட்களுடன் தொடர்புபடுத்தி வண்ணங்களுக்கு பெயரிடு. உதாரணம்:ஆகாய நீலம்,இரத்த சிவப்பு,ஆப்பிள் பச்சை போன்றவை)</font></h5>
+
+        </th>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(100, 149, 237); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(184, 134, 11); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(189, 183, 107); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(139, 0, 139); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(143, 188, 143); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(205, 92, 92); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(169, 169, 169); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(255, 182, 193); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(245, 245, 245); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+    </tbody>
+  </table>
+  </li>
+  <br />
+  <li>Pick the color from the RGB color palette that matches the below mentioned colors.<br />
+  (Click on each of the boxes below to display the color palette. Select from the basic colors or use the mouse to select the desired color from the palette and click on ok button). <br /> <font color="blue">கீழே கொடுக்கப்பட்டுள்ள வண்ணத்திற்கு பொருத்தமான வண்ணத்தை ஆர் ஜி பி வண்ணதட்டிலிருந்து எடு.
+(வண்ணத்தட்டை காட்சிபடுத்த கீழே உள்ள பெட்டிகளை க்ளிக் செய்யவும்.  அடிப்படை வண்ணங்களிலிருந்து தேர்வுசெய்(அல்லது)வண்ணதட்டிலிருந்து விருப்ப வண்ணத்தை தேர்வுசெய்ய மௌசை உபயோகப்படுத்தி ஒகே பித்தானை அழுத்து.)</font>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>
+        <h5>Gold <font color="blue"> (தங்கம்)</font>:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Ghost white <font color="blue"> (பேய்வெள்ளை)</font>:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Chocolate brown <font color="blue"> (சாக்லேட் பழுப்பு)</font>:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+      </tr>
+      <tr>
+        <td>
+        <h5>Midnight blue <font color="blue"> (நள்ளிரவு நீலம்)</font>:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Olive green <font color="blue"> (ஆலிவ் பச்சை)</font>:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Sandy brown <font color="blue"> (மணல் பழுப்பு)</font>:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+      </tr>
+      <tr>
+        <td>
+        <h5>Dark Red <font color="blue"> (அடர்சிவப்பு)</font>:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Snow white <font color="blue"> (பனிவெண்மை)</font>:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Cyan <font color="blue"> (நீலபச்சை)</font>:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+      </tr>
+    </tbody>
+  </table>
+  </li>
+  <br />
+  <li>Indicate your mother tongue or native language (English, Hindi, German, Mandarin etc): <font color="blue"> (உன்னுடைய தாய்மொழி (அல்லது)பிறப்பிட மொழியை குறிப்பிடு. ஆங்கிலம்,ஹிந்தி,ஜெர்மனி,மான்டரின் போன்றவை) </font><input name="color" type="text" /></li>
+</ol>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+<div style="text-align:center">  
+    <input type="submit" />  
+</div>  
+</form>
+</div>
+<style>
+body {
+    border: 1px solid black;
+    margin-top: 40px;
+    margin-bottom: 120px;
+    margin-right: 90px;
+    margin-left: 90px;
+    background-color: white;
+}
+</style>
+<!-- End Image Tagging Layout --><!-- Open internal style sheet -->
+<style type="text/css">#collapseTrigger{
+  color:#fff;
+  display: block;
+  text-decoration: none;
+}
+
+
+
+.image{
+  margin-bottom: 15px;
+}
+.radio:first-of-type{
+  margin-top: -5px;
+}
+</style>
+<!-- Close internal style sheet --><!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><script>
+  $(document).ready(function() {
+    // Instructions expand/collapse
+    var content = $('#instructionBody');
+    var trigger = $('#collapseTrigger');
+    content.hide();
+    $('.collapse-text').text('(Click to expand)');
+    trigger.click(function(){
+      content.toggle();
+      var isVisible = content.is(':visible');
+      if(isVisible){
+        $('.collapse-text').text('(Click to collapse)');
+      }else{
+        $('.collapse-text').text('(Click to expand)');
+      }
+    });
+    // end expand/collapse
+  });
+</script>
